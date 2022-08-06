@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/internal/operators';
+import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://fredsflix.herokuapp.com/';
+const apiUrl = 'https://fredsflix.herokuapp.com/'
 @Injectable({
   providedIn: 'root'
 })
-export class UserRegistrationService {
+export class FetchApiDataService {
 // Inject the HttpClient module to the constructor params
 // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
@@ -27,9 +27,9 @@ export class UserRegistrationService {
     'Something bad happened; please try again later.');
   }
  // Non-typed response extraction
-private extractResponseData(res: Response): any {
+private extractResponseData(res: any): any {
   const body = res;
-  return body || { };
+  return body || {};
 }
 
 
