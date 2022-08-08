@@ -1,8 +1,15 @@
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 2px solid red;
 
+}
 img {
     width: 250px;
-height: 350px;
+    height: 350px;
     object-fit: contain;
+    
 }
 mat-card-title {
     height: 40px;
@@ -10,16 +17,21 @@ mat-card-title {
 
 mat-card {
     background-color: rgb(232, 232, 232);
-        color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
         margin: 10px;
+    max-width: 250px;
     }
 
 button {
-    color: white;
-}
-
+    max-width: 140px;
+    
+        width: 75px;
+    
+    }
 .buttons {
     display: flex;
+    justify-content: space-between;
+        width: 275px;
 }
 
 mat-card-actions {
