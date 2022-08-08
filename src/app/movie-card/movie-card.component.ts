@@ -8,11 +8,12 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class MovieCardComponent {
   movies: any[] = [];
-
+  loading: boolean = false;
 
   constructor(public fetchApiData: FetchApiDataService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.getMovies();
   }
 
@@ -20,6 +21,7 @@ export class MovieCardComponent {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
       console.log(this.movies);
+      this.loading = false;
       return this.movies;
     });
   }
