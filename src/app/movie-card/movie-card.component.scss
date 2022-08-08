@@ -1,6 +1,7 @@
+
 img {
     width: 250px;
-    height: 300px;
+height: 350px;
     object-fit: contain;
 }
 mat-card-title {
@@ -8,9 +9,13 @@ mat-card-title {
 }
 
 mat-card {
-    background-color: rgb(215, 242, 239);
-    color: rgb(4, 75, 65);
+    background-color: rgb(232, 232, 232);
+        color: rgb(0, 0, 0);
+        margin: 10px;
+    }
 
+button {
+    color: white;
 }
 
 .buttons {
@@ -18,6 +23,7 @@ mat-card {
 }
 
 mat-card-actions {
+
     display: flex;
 
 }
