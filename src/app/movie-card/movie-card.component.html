@@ -1,5 +1,5 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
 <div style="display: flex;">
-    <mat-spinner *ngIf="loading"></mat-spinner>
     <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
         <mat-card-header>
         <mat-card-title>{{movie.Title}}</mat-card-title>
@@ -7,6 +7,7 @@
             </mat-card-header>
             <img src={{movie.ImagePath}} alt={{movie.Title}} />
             <mat-card-actions>
+            <div class="buttons">
                 <button mat-button color="primary">
                     Genre
                 </button>
@@ -16,6 +17,7 @@
                 <button mat-button color="primary">
                     Synopsis
                 </button>
+            </div>
                 <mat-icon>favorite_border</mat-icon>
             </mat-card-actions>
             </mat-card>
