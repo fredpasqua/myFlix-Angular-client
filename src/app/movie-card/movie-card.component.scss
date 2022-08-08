@@ -1,5 +1,23 @@
 img {
     width: 250px;
-    height: 350px;
+    height: 300px;
     object-fit: contain;
+}
+mat-card-title {
+    height: 40px;
+}
+
+mat-card {
+    background-color: rgb(215, 242, 239);
+    color: rgb(4, 75, 65);
+
+}
+
+.buttons {
+    display: flex;
+}
+
+mat-card-actions {
+    display: flex;
+
 }
