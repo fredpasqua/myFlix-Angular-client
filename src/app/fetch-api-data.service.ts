@@ -134,8 +134,12 @@ private extractResponseData(res: any): any {
   // Edit user
   updateUser(userDetails: any): Observable<any> {
     console.log(userDetails);
+    const token = localStorage.getItem('token');
     const userName = localStorage.getItem('user');
-    return this.http.put(apiUrl + `users/${userName}`, userDetails).pipe(
+    return this.http.put(apiUrl + `users/${userName}`, userDetails, {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(map(this.extractResponseData),
     catchError(this.handleError)
     );
   }
