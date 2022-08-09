@@ -11,27 +11,28 @@ img {
 }
 mat-card-title {
     height: 40px;
+    padding: 5px;
 }
-
 mat-card {
     display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
+            align-items: center;
         border: 2px solid red;
-        background-color: rgb(242, 236, 255);
+        background-color: rgb(239, 239, 239);
     color: rgb(0, 0, 0);
         margin: 10px;
     max-width: 225px;
-    }
-
-
-
-
+}
 mat-card-actions {
     display: flex;
-    
 }
 mat-card-actions button {
-    justify-content: center;
-    padding: 5px;
+    justify-content: space-around;
+        padding: 1px;
+    }
+    
+    .mat-red {
+        background-color: rgb(254, 85, 67);
+        color: #fff;
 }
