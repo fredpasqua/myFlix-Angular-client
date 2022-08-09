@@ -37,7 +37,7 @@ registerUser(): void {
         duration: 2000
       });
     }, (response) => (
-      this.snackBar.open('User registration successful', 'OK', {
+      this.snackBar.open('Please try again', 'OK', {
         duration: 2000
       })
     ))
