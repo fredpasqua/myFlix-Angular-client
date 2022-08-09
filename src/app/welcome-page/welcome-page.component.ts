@@ -12,7 +12,7 @@ export class WelcomePageComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
   ngOnInit(): void {
   }
-  imageSrc = 'assets/images/moviepopcorn1.jpg'  
+  imageSrc = 'assets/images/myFlixImage.png'  
   imageAlt = 'image of popcorn'
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {

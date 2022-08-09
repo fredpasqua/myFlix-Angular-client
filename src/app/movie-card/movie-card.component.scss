@@ -2,38 +2,36 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 img {
     width: 250px;
-    height: 350px;
+    height: 250px;
     object-fit: contain;
-    
 }
 mat-card-title {
     height: 40px;
 }
 
 mat-card {
-    background-color: rgb(232, 232, 232);
+    display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 2px solid red;
+        background-color: rgb(242, 236, 255);
     color: rgb(0, 0, 0);
         margin: 10px;
-    max-width: 250px;
+    max-width: 225px;
     }
 
-button {
-    max-width: 140px;
-    
-        width: 75px;
-    
-    }
-.buttons {
-    display: flex;
-    justify-content: space-between;
-        width: 275px;
-}
+
+
 
 mat-card-actions {
-
     display: flex;
-
+    
+}
+mat-card-actions button {
+    justify-content: center;
+    padding: 5px;
 }
