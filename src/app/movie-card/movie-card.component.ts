@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
-
+import { MatDialog } from '@angular/material/dialog';
+import { DirectorComponent } from '../director/director.component';
+import { GenreComponent } from '../genre/genre.component';
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -10,7 +12,9 @@ export class MovieCardComponent {
   movies: any[] = [];
   loading: boolean = false;
   favorites: any[] = ["621837d7a9f7d842a1f68dad"];
-  constructor(public fetchApiData: FetchApiDataService) { }
+  constructor(
+    public fetchApiData: FetchApiDataService, 
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.loading = true;
@@ -46,5 +50,32 @@ export class MovieCardComponent {
       this.ngOnInit();
     })
   };
+
+
+  openDirectorDialoge(Name: string, Bio: string, Birth: Date): void {
+    this.dialog.open(DirectorComponent, {
+      width: '280px',
+      data: {
+        Name: Name,
+        Bio: Bio,
+        Birthday: Birth,
+      }
+      
+    }
+    
+    );
+   
+  }
+
+  openGenreDialoge(Name: string, Description: string): void {
+    this.dialog.open(GenreComponent, {
+      width: '280px',
+      data: {
+        Name: Name,
+        Description: Description,
+      
+      }
+    });
+  }
  
 }

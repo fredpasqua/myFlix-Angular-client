@@ -11,8 +11,10 @@
             </mat-card-header>
 
             <mat-card-actions>
-        <button mat-raised-button color="red">Genre</button>
-        <button mat-raised-button color="red">Director</button>
+        <button mat-raised-button color="red"
+            (click)="openGenreDialoge(movie.Genre.Name, movie.Genre.Description)">Genre</button>
+        <button mat-raised-button color="red"
+            (click)="openDirectorDialoge(movie.Director.Name, movie.Director.Bio, movie.Director.Birth)">Director</button>
         <button mat-raised-button color="red">Synopsis</button>
         </mat-card-actions>
         <button mat-button *ngIf="!isFav(movie._id)" (click)="addFavorite(movie._id)">
@@ -22,5 +24,4 @@
             <mat-icon color="accent">favorite</mat-icon>
         </button>
         </mat-card>
-    
 </div>

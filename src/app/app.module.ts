@@ -20,15 +20,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ProfileComponent } from './profile/profile.component'; 
+import { ProfileComponent } from './profile/profile.component';
+import { DirectorComponent } from './director/director.component';
+import { GenreComponent } from './genre/genre.component'; 
+
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'director', component: DirectorComponent },
+  { path: 'genre', component: GenreComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
-  
-
 ];
 
 
@@ -40,7 +43,9 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     NavbarComponent,
-    ProfileComponent, 
+    ProfileComponent,
+    DirectorComponent,
+    GenreComponent, 
    
   ],
   imports: [
