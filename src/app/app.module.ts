@@ -22,7 +22,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DirectorComponent } from './director/director.component';
-import { GenreComponent } from './genre/genre.component'; 
+import { GenreComponent } from './genre/genre.component';
+import { MovieViewComponent } from './movie-view/movie-view.component'; 
 
 
 const appRoutes: Routes = [
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     ProfileComponent,
     DirectorComponent,
-    GenreComponent, 
+    GenreComponent,
+    MovieViewComponent, 
    
   ],
   imports: [

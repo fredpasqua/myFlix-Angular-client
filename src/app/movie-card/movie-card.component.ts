@@ -3,6 +3,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DirectorComponent } from '../director/director.component';
 import { GenreComponent } from '../genre/genre.component';
+import { MovieViewComponent } from '../movie-view/movie-view.component';
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -59,12 +60,8 @@ export class MovieCardComponent {
         Name: Name,
         Bio: Bio,
         Birthday: Birth,
-      }
-      
-    }
-    
-    );
-   
+      }  
+    });
   }
 
   openGenreDialoge(Name: string, Description: string): void {
@@ -77,5 +74,22 @@ export class MovieCardComponent {
       }
     });
   }
- 
+
+  openMovieViewDialoge(
+    Title: string, 
+    Description: string, 
+    ImagePath: string): void {
+    this.dialog.open(MovieViewComponent, {
+      width: '350px',
+      data: {
+        Title: Title,
+        Description: Description,
+        ImagePath: ImagePath,
+      }
+    });
+  }
+
+
+
+
 }
