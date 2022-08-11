@@ -31,23 +31,19 @@ export class ProfileComponent {
   editUser(): void {
     console.log(this.userData);
     this.fetchApiData.updateUser(this.userData).subscribe((result) => {
-      this.dialogRef.close();
       console.log(result);
+      if(result){
       this.snackBar.open('Successfully updated profile!', 'OK', {
         duration: 2000
-      });
+      })};
       // Log out user if they update Username or Password to avoid errors
       if (this.userData.Username || this.userData.Password) {
-        localStorage.clear();
-        this.router.navigate(['welcome']);
-        this.snackBar.open('Please login again with your new credentials', 'OK', {
-          duration: 2000
-        });
+        localStorage.setItem('user', this.userData.Username);
       }
     })
   }
 
-  exitUpdate(): void {
+  backToMovies(): void {
     this.router.navigate(['movies']);
   }
 
