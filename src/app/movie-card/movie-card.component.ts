@@ -49,14 +49,14 @@ export class MovieCardComponent {
   addFavorite(id: any): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe((resp: any) => {
       console.log(resp);
-      this.ngOnInit();
+      this.getFavorites();
     })
   };
 
   removeFavorite(id: any): void {
     this.fetchApiData.removeFavoriteMovie(id).subscribe((resp: any) => {
       console.log(resp);
-      this.ngOnInit();
+      this.getFavorites();
     })
   };
 

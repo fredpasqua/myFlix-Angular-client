@@ -123,7 +123,7 @@ private extractResponseData(res: any): any {
   addFavoriteMovie(movieId: any): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
-    return this.http.post(apiUrl + `users/${user}/movies/${movieId}`, {headers: new HttpHeaders(
+    return this.http.post(apiUrl + `users/${user}/movies/${movieId}`, null, {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
       })}).pipe(
