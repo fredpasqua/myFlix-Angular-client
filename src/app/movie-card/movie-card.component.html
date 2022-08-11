@@ -21,7 +21,7 @@
         <button mat-button *ngIf="!isFav(movie._id)" (click)="addFavorite(movie._id)">
             <mat-icon color="accent">favorite_border</mat-icon>
         </button>
-        <button mat-button *ngIf="isFav(movie._id)">
+        <button mat-button *ngIf="isFav(movie._id)" (click)="removeFavorite(movie._id)">
             <mat-icon color="accent">favorite</mat-icon>
         </button>
         </mat-card>

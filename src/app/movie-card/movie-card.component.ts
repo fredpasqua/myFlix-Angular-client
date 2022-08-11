@@ -12,15 +12,16 @@ import { MovieViewComponent } from '../movie-view/movie-view.component';
 export class MovieCardComponent {
   movies: any[] = [];
   loading: boolean = false;
-  favorites: any[] = ["621837d7a9f7d842a1f68dad"];
+  favorites: any[] = [];
   constructor(
     public fetchApiData: FetchApiDataService, 
     public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.loading = true;
-    this.getMovies();
     this.getFavorites();
+    this.getMovies();
+   
   }
 
   isFav(id: string): boolean {
@@ -39,18 +40,27 @@ export class MovieCardComponent {
   getFavorites(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((resp: any) => {
-      const userFavorites = (resp._id);
-      console.log(resp._id)
-      this.favorites.push(userFavorites);
+      const userFavorites = (resp.FavoriteMovies);
+      console.log(resp.FavoriteMovies)
+      this.favorites = userFavorites;
     })
   }
 
-  addFavorite(_id: string): void {
-    this.fetchApiData.addFavoriteMovie(_id).subscribe((result) => {
-      console.log(result);
+  addFavorite(id: any): void {
+    this.fetchApiData.addFavoriteMovie(id).subscribe((resp: any) => {
+      console.log(resp);
       this.ngOnInit();
     })
   };
+
+  removeFavorite(id: any): void {
+    this.fetchApiData.removeFavoriteMovie(id).subscribe((resp: any) => {
+      console.log(resp);
+      this.ngOnInit();
+    })
+  };
+
+ 
 
 
   openDirectorDialoge(Name: string, Bio: string, Birth: Date): void {

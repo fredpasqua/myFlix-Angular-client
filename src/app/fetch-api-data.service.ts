@@ -120,7 +120,7 @@ private extractResponseData(res: any): any {
 
  
   // Add a movie to favourite Movies
-  addFavoriteMovie(movieId: any): Observable<any>{
+  addFavoriteMovie(movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http.post(apiUrl + `users/${user}/movies/${movieId}`, {headers: new HttpHeaders(
