@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
-
-  @Input() userData = {Username: '', Password: '', Email: '', Birthday: ''};
+  user: any = {};
+  @Input() userData: any = {Username: '', Password: '', Email: '', Birthday: ''};
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -21,30 +21,36 @@ export class ProfileComponent {
   ) { }
 
   ngOnInit(): void {
-    
+    this.getUser();
   }
 
-
+  getUser(): void {
+    const user = localStorage.getItem('user');
+    this.fetchApiData.getUser(user).subscribe((resp: any) => {
+      this.user = resp;
+      console.log(resp);
+      return this.user
+    });
+  }
   /**
    * allows user to edit their data, such as Username, password, email, and birthday
    */
   editUser(): void {
-    console.log(this.userData);
+    if(this.userData.Username&&this.userData.Password&&this.userData.Email){
     this.fetchApiData.updateUser(this.userData).subscribe((result) => {
-      console.log(result);
-      if(result){
       this.snackBar.open('Successfully updated profile!', 'OK', {
         duration: 2000
+      })})
+        this.getUser()
+        localStorage.setItem('user', this.userData.Username)
+        this.ngOnInit()
+    } else {
+        this.snackBar.open('Missing Required info', 'OK', {
+          duration: 2000
       })};
-      // Log out user if they update Username or Password to avoid errors
-      if (this.userData.Username || this.userData.Password) {
-        localStorage.setItem('user', this.userData.Username);
-      }
-    })
-  }
-
+  };
+  
   backToMovies(): void {
     this.router.navigate(['movies']);
   }
-
 }

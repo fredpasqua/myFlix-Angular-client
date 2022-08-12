@@ -2,6 +2,17 @@ $backgroundColor: #f8f9fa;
 $cardColor: #fff;
 $textColor: #343a40;
 $boxShadowColor: #e9ecef;
+.Profile {
+    margin-top: 40px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.required {
+    color: red;
+    font-size: 10px;
+}
 
 .edit-profile-dialog {
     background-color: $cardColor;
