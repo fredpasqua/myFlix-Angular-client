@@ -36,7 +36,6 @@ private extractResponseData(res: any): any {
   // User registration
 
    public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
     catchError(this.handleError)
     );
@@ -45,7 +44,6 @@ private extractResponseData(res: any): any {
  
   // User login
   public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(
      
     catchError(this.handleError)
@@ -133,7 +131,6 @@ private extractResponseData(res: any): any {
   }
   // Edit user
   updateUser(userDetails: any): Observable<any> {
-    console.log(userDetails);
     const token = localStorage.getItem('token');
     const userName = localStorage.getItem('user');
     return this.http.put(apiUrl + `users/${userName}`, userDetails, {headers: new HttpHeaders(
@@ -147,7 +144,6 @@ private extractResponseData(res: any): any {
   
   // Delete user and
   deleteUser(userName: any): Observable<any> {
-    console.log(userName);
     return this.http.delete(apiUrl + `users/${userName}`).pipe(
       map(this.extractResponseData),
     catchError(this.handleError)

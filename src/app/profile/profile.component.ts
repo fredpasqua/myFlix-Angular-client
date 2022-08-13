@@ -28,7 +28,6 @@ export class ProfileComponent {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((resp: any) => {
       this.user = resp;
-      console.log(resp);
       return this.user
     });
   }

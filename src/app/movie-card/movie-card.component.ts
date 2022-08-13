@@ -31,7 +31,6 @@ export class MovieCardComponent {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      console.log(this.movies);
       this.loading = false;
       return this.movies;
     });
@@ -41,22 +40,19 @@ export class MovieCardComponent {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((resp: any) => {
       const userFavorites = (resp.FavoriteMovies);
-      console.log(resp.FavoriteMovies)
       this.favorites = userFavorites;
     })
   }
 
   addFavorite(id: any): void {
     this.fetchApiData.addFavoriteMovie(id).subscribe((resp: any) => {
-      console.log(resp);
       this.getFavorites();
     })
   };
 
   removeFavorite(id: any): void {
     this.fetchApiData.removeFavoriteMovie(id).subscribe((resp: any) => {
-      console.log(resp);
-      this.getFavorites();
+    this.getFavorites();
     })
   };
 
