@@ -1,16 +1,19 @@
-<!-- src/app/user-registration-form/user-registration-form.component.html -->
-<mat-card>
+<mat-card class="registration">
     <mat-card-header>
         <mat-card-title>Sign Up!</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <form>
+        
             <mat-form-field>
+                <mat-label>Username: 5 characters minimum</mat-label>
                 <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username"
                     required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password"
+                <mat-label>Password: 6 characters minimum</mat-label>
+                <input matInput [(ngModel)]="userData.Password" label="must be atleast 5 char." type="password" placeholder="Password"
+                    name="Password"
                     required>
             </mat-form-field>
             <mat-form-field>
