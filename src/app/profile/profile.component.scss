@@ -1,35 +1,53 @@
-$backgroundColor: #f8f9fa;
+$backgroundColor: #fdf2d7;
 $cardColor: #fff;
 $textColor: #343a40;
-$boxShadowColor: #e9ecef;
+
 .Profile {
+display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin-top: 40px;
-    width: 80%;
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
+}
+                .movie-images {
+                    height: 50px;
+                    width: 30px;
+                }
+
+.profile-dialog-content {
+    margin: 25px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    color: black;
+    border: 1px solid $textColor;
+    border-radius: 10px;
+    background-color: $backgroundColor;
+}
+.edit-profile-dialog-content {
+
+    width: 200px;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        color: black;
+        border: 1px solid $textColor;
+        border-radius: 10px;
+        background-color: $backgroundColor;
+}
+
+.edit-profile-actions {
+    align-self: center;
 }
 
 .required {
     color: red;
     font-size: 10px;
-}
 
-.edit-profile-dialog {
-    background-color: $cardColor;
-    margin-top: 0px;
-    box-shadow: none;
-}
-
-.edit-profile-dialog-title {
-    color: $textColor;
-}
-
-.edit-profile-dialog-content {
-    color: $textColor;
-}
-
-::ng-deep .edit-profile-custom>mat-dialog-container {
-    background-color: $cardColor;
 }
 
 .mat-red {

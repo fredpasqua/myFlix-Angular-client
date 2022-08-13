@@ -2,37 +2,40 @@
 <mat-card class="Profile">
     <mat-card-content class="profile-dialog-content">
         <form>
-            <mat-card-title>Your User Profile</mat-card-title>
+            <mat-icon>account_circle</mat-icon>
             <mat-card-content>Username: {{user.Username}}</mat-card-content>
             <mat-card-content>Email: {{user.Email}}</mat-card-content>
-            <mat-card-content *ngIf=(user.Birthday)>Birthday: {{user.Birthday.slice(0,10)}}</mat-card-content>
-    <mat-card-header>
-        <mat-card-title>Edit your profile information <span class="required"> * = Required</span></mat-card-title>
-    </mat-card-header>
-            </form>
+            <mat-card-content *ngIf=(user.Birthday)>Birthday:
+                {{userData.Birthday.slice(5,7)}}/{{userData.Birthday.slice(8,10)}}/{{userData.Birthday.slice(0,4)}}
             </mat-card-content>
-            <mat-card-content class="edit-profile-dialog-content">
+            </form>
+            
+    </mat-card-content>
+    <mat-card-content class="edit-profile-dialog-content">
+            <mat-card-title>Edit Your Profile
+            </mat-card-title>
+            <span class="required">All fields are required to update</span>
                 <form>
             <mat-form-field>
-                <input matInput [(ngModel)]="userData.Username" placeholder="Username*" type="text" name="Username">
+                <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username">
             </mat-form-field>
             <mat-form-field>
-                <input matInput [(ngModel)]="userData.Password" placeholder="Password*" type="password" name="Password">
+                <input matInput [(ngModel)]="userData.Password" placeholder="Password" type="password" name="Password">
             </mat-form-field>
             <mat-form-field>
-                <input matInput [(ngModel)]="userData.Email" placeholder="Email*" type="email" name="Email">
+                <input matInput [(ngModel)]="userData.Email" placeholder="Email" type="email" name="Email">
             </mat-form-field>
             <mat-form-field>
                 <input matInput [(ngModel)]="userData.Birthday" placeholder="Birthday" type="date" name="Birthday">
             </mat-form-field>
         </form>
+        <mat-card-actions class="edit-profile-actions">
+            <button mat-raised-button (click)="editUser()" color="red">Submit</button>
+            </mat-card-actions>
     </mat-card-content>
-    <mat-card-actions class="edit-profile-actions">
-        <button mat-raised-button (click)="editUser()" color="red">
-            Update your details
-        </button>
-        <button mat-raised-button (click)="backToMovies()" color="red">
-            Back To Movies
-        </button>
-    </mat-card-actions>
+    <mat-card-content>
+        <mat-card *ngFor="let movie of usersFavoriteMovies;">
+            <img src={{movie.ImagePath}} alt={{movie.Title}} class="movie-images" />
+        </mat-card>
+    </mat-card-content>
 </mat-card>

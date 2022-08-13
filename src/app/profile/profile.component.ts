@@ -4,6 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   user: any = {};
+  usersFavoriteMovies: any = [];
+  movies: any = [];
   @Input() userData: any = {Username: '', Password: '', Email: '', Birthday: ''};
 
   constructor(
@@ -22,15 +25,37 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
+    this.getMovies();
+
   }
 
   getUser(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((resp: any) => {
+      console.log(resp);
       this.user = resp;
+      this.userData = resp;
+      this.userData.Password = '';
+      this.userData.Birthday = new Date(resp.Birthday).toISOString().split('T')[0];
+      this.usersFavoriteMovies = resp.FavoriteMovies;
       return this.user
     });
   }
+
+  getMovies(): void {
+    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
+       this.movies = resp;
+      
+        
+      });
+  
+  }
+
+
+
+
+
+
   /**
    * allows user to edit their data, such as Username, password, email, and birthday
    */
