@@ -39,10 +39,11 @@ export class ProfileComponent implements OnInit {
     this.fetchApiData.updateUser(this.userData).subscribe((result) => {
       this.snackBar.open('Successfully updated profile!', 'OK', {
         duration: 2000
-      })})
+      })
         this.getUser()
         localStorage.setItem('user', this.userData.Username)
         this.ngOnInit()
+      })
     } else {
         this.snackBar.open('Missing Required info', 'OK', {
           duration: 2000
