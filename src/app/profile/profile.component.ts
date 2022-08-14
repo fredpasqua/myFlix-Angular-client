@@ -35,6 +35,8 @@ export class ProfileComponent implements OnInit {
       this.usersFavoriteMovies= resp.FavoriteMovies;
       this.user = resp;
       this.userData.Password = '';
+      this.userData.Username = resp.Username;
+      this.userData.Email = resp.Email;
       this.userData.Birthday = new Date(resp.Birthday).toISOString().split('T')[0];
       return this.user
       
