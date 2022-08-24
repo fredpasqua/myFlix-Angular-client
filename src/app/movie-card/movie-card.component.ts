@@ -23,11 +23,21 @@ export class MovieCardComponent {
     this.getMovies();
    
   }
-
+/**
+ * This function checks the movie card against the state favorites to determine 
+ * if the movie is a favorite movie
+ * @param id 
+ * @returns boolean
+ */
   isFav(id: string): boolean {
     return this.favorites.includes(id)
   }
-
+/**
+ * This function calls the API and returns the movies object as well as sets loading to false to 
+ * stop the loading spinner
+ * @returns movies object
+ * 
+ */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
