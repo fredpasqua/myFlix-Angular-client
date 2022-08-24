@@ -30,7 +30,7 @@
     "strictTemplates": true
   }, 
   "typedocOptions": {
-    "entryPoints": ["src/app/movie-card/movie-card.component.ts"],
+    "entryPoints": ["src/app/director/director.component.ts", "src/app/movie-card/movie-card.component.ts", "src/app/genre/genre.component.ts", "src/app/movie-view/movie-view.component.ts", "src/app/fetch-api-data.service.ts"],
     "out": "docs"
 }
 }
