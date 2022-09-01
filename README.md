@@ -1,8 +1,9 @@
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
-The App relies on a previously created API hosted on Heroku built with MongoDB and served up by Express. 
-The App was a rebuild of a previous project done in React with Redux for State Management. The idea was to build the same app using Angular for the client side and in doing, familiarize myself with Angular and TypeScript. 
+The App perfoms basic CRUD operations with a backend I created previously which is hosted on Heroku and built with MongoDB and served up by Express. 
+The App was a rebuild of a previous project done in React. Recreating the App allowed was a great opportunity to explore Angular and familiarize myself with its unique syntax and to practice using TypeScript. 
+
 The App allows users to: 
 <ul><li>register a new account</li>
 <li>login</li>
@@ -17,9 +18,6 @@ The App allows users to:
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
