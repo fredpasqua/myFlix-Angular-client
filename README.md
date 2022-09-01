@@ -5,14 +5,13 @@ The App relies on a previously created API hosted on Heroku built with MongoDB a
 The App was a rebuild of a previous project done in React with Redux for State Management. The idea was to build the same app using Angular for the client side and in doing, familiarize myself with Angular and TypeScript. 
 The App allows users to: 
 <ul><li>register a new account</li>
+<li>login</li>
+<li>manage their account info</li>
+<li>browse movies</li>
+<li>favorite movies</li>
+<li>Learn more about directors and genres</li>
+<li>View a synopsis of each film</li>
 </ul>
-login
-manage their account info
-browse movies
-favorite movies
-Learn more about directors and genres
-View a synopsis of each film
-
 
 ## Development server
 
