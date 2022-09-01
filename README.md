@@ -3,8 +3,15 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
 The App relies on a previously created API hosted on Heroku built with MongoDB and served up by Express. 
 The App was a rebuild of a previous project done in React with Redux for State Management. The idea was to build the same app using Angular for the client side and in doing, familiarize myself with Angular and TypeScript. 
-The App allows users to register/login and manage their account info
-The App allows users to browse movies, favorite movies, and read about directors, genres and synopsis of each film.
+The App allows users to: 
+<ul><li>register a new account</li>
+</ul>
+login
+manage their account info
+browse movies
+favorite movies
+Learn more about directors and genres
+View a synopsis of each film
 
 
 ## Development server
