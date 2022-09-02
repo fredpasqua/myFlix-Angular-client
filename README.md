@@ -1,8 +1,8 @@
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
-The App perfoms basic CRUD operations with a backend I created previously which is hosted on Heroku and built with MongoDB and served up by Express. 
 The App was a rebuild of a previous project done in React. Recreating the client side that was previously built with React was a great way to explore Angular and familiarize myself with its unique syntax and to practice using TypeScript. 
+The App perfoms basic CRUD operations in conjunction with the backend I created previously, which is hosted on Heroku and built with MongoDB and served up by Express.
 
 The App allows users to: 
 <ul><li>register a new account</li>
