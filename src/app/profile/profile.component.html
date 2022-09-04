@@ -13,9 +13,9 @@
             </form>
             
     </mat-card-content>
+
     <mat-card-content class="edit-profile-dialog-content">
-            <mat-card-title>Edit Your Profile
-            </mat-card-title>
+            <mat-card-title>Update My Profile</mat-card-title>
             <span class="required">All fields are required to update</span>
                 <form>
             <mat-form-field>
@@ -35,14 +35,12 @@
             <button mat-raised-button (click)="editUser()" color="red">Submit</button>
             </mat-card-actions>
     </mat-card-content>
-<mat-card>
-    <mat-card-title>My Favorite Movies</mat-card-title>
-    <mat-card class="favorite-movies">
+    <mat-card-title class="favorite-title">My Favorite Movies</mat-card-title>
+    <mat-card-content class="favorite-movies">
         <mat-card-content *ngFor="let movie of movies;">
             <mat-card *ngIf="isFav(movie._id)" class="fav-movies-card">
             <img src={{movie.ImagePath}} class="movie-images" />
+            </mat-card>
+        </mat-card-content>
+        </mat-card-content>
         </mat-card>
-    
-    </mat-card-content>
-</mat-card>
-</mat-card>
